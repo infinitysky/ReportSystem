@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   loginButton(){
     //[routerLink]="['/dashboard/home']"
-    this._router.navigate(['/dashboard/blankpage'], {relativeTo: this._activatedRoute});
+    this._router.navigate(['/dashboard/BlankPage'], {relativeTo: this._activatedRoute});
 
   }
 

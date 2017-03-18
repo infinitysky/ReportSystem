@@ -1,49 +1,224 @@
-<button class="btn btn-default" id="toggle-sidebar" type="button" (click)="eventCalled()">
-  &#9776;
-</button>
-<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
-  <ul class="list-group">
-    <a routerLink="/dashboard/home" [routerLinkActive]="['router-link-active']" class="list-group-item">
-      <i class="fa fa-fw fa-dashboard"></i> Dashboard
-    </a>
-    <a [routerLink]="['chart']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-      <i class="fa fa-fw fa-bar-chart-o"></i> Charts
-    </a>
-    <a [routerLink]="['tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-      <i class="fa fa-fw fa-table"></i> Tables
-    </a>
-    <a [routerLink]="['forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-      <i class="fa fa-fw fa-edit"></i> Forms
-    </a>
-    <a [routerLink]="['element']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-      <i class="fa fa-fw fa-desktop"></i> Bootstrap Elements
-    </a>
-    <a [routerLink]="['grid']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-      <i class="fa fa-fw fa-wrench"></i> Bootstrap Grid
-    </a>
-    <a [routerLink]="['components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-      <i class="fa fa-th-list"></i> &nbsp;Component
-    </a>
-    <div class="nested-menu">
-      <a class="list-group-item" (click)="addExpandClass('pages')">
-        <span><i class="fa fa-plus"></i> &nbsp; Menu</span>
-      </a>
-      <li class="nested" [ngClass]="{'expand' : showMenu === 'pages' }">
-        <ul class="submenu">
-          <li>
-            <a href><span>Submenu</span></a>
+<div class="sidebar">
+  <nav class="sidebar-nav">
+    <form>
+      <div class="form-group p-h mb-0">
+        <input type="text" class="form-control" aria-describedby="search" placeholder="Search...">
+      </div>
+    </form>
+    <ul class="nav">
+      <li class="nav-title">
+        Dashboard
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/dashboard']"><i class="icon-speedometer"></i> Dashboard <span class="badge badge-info">NEW</span></a>
+      </li>
+
+      <li class="divider"></li>
+      <li class="nav-title">
+        UI Elements
+      </li>
+      <li class="nav-item nav-dropdown" routerLinkActive="open">
+        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-puzzle"></i> Components</a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/buttons']"><i class="icon-puzzle"></i> Buttons</a>
           </li>
-          <li>
-            <a href><span>Submenu</span></a>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/social-buttons']"><i class="icon-puzzle"></i> Social Buttons</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/cards']"><i class="icon-puzzle"></i> Cards</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/forms']"><i class="icon-puzzle"></i> Forms</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/modals']"><i class="icon-puzzle"></i> Modals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/switches']"><i class="icon-puzzle"></i> Switches</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/tables']"><i class="icon-puzzle"></i> Tables</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/components/tabs']"><i class="icon-puzzle"></i> Tabs</a>
           </li>
         </ul>
       </li>
-    </div>
-    <a [routerLink]="['blankpage']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-      <i class="fa fa-file-o"></i> &nbsp;BlankPage
-    </a>
-    <a class="list-group-item more-themes" href="http://www.strapui.com/" >
-      More Themes
-    </a>
-  </ul>
-</nav>
+      <li class="nav-item nav-dropdown" routerLinkActive="open">
+        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-star"></i> Icons</a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/icons/font-awesome']"><i class="icon-star"></i> Font Awesome</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/icons/glyphicons']"><i class="icon-star"></i> Glyphicons</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/icons/glyphicons-filetypes']"><i class="icon-star"></i> Filetypes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/icons/glyphicons-social']"><i class="icon-star"></i> Glyphicons Social</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/icons/simple-line-icons']"><i class="icon-star"></i> Simple Line Icons</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item nav-dropdown" routerLinkActive="open">
+        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-note"></i> Forms</a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/forms/basic-forms']"><i class="icon-note"></i> Basic Forms</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/forms/advanced-forms']"><i class="icon-note"></i> Advanced Forms</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item nav-dropdown" routerLinkActive="open">
+        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-energy"></i> Plugins</a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/plugins/calendar']"><i class="icon-calendar"></i> Calendar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/plugins/datatable']"><i class="icon-menu"></i> DataTable</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/plugins/draggable-cards']"><i class="icon-cursor-move"></i> Draggable Cards</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/plugins/loading-buttons']"><i class="icon-cursor"></i> Loading Buttons</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/plugins/notifications']"><i class="icon-info"></i> Notifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/plugins/spinners']"><i class="fa fa-spinner"></i> Spinners</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/widgets']"><i class="icon-calculator"></i> Widgets <span class="badge badge-info">NEW</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/charts']"><i class="icon-pie-chart"></i> Charts</a>
+      </li>
+      <li class="divider"></li>
+      <li class="nav-title">
+        Extras
+      </li>
+      <li class="nav-item nav-dropdown" routerLinkActive="open">
+        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-star"></i> Pages</a>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/login']"><i class="icon-star"></i> Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/register']"><i class="icon-star"></i> Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/404']"><i class="icon-star"></i> Error 404</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" [routerLink]="['/pages/500']"><i class="icon-star"></i> Error 500</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item nav-dropdown" routerLinkActive="open">
+        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-layers"></i> UI Kits</a>
+
+        <ul class="nav-dropdown-items">
+          <li class="nav-item nav-dropdown" routerLinkActive="open">
+            <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-speech"></i> Invoicing</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['/uikits/invoicing/invoice']"><i class="icon-speech"></i> Invoice</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item nav-dropdown" routerLinkActive="open">
+            <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-speech"></i> Email</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['/uikits/email/inbox']"><i class="icon-speech"></i> Inbox</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['/uikits/email/message']"><i class="icon-speech"></i> Message</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['/uikits/email/compose']"><i class="icon-speech"></i> Compose</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="divider m-h"></li>
+      <li class="nav-title">
+        Labels
+      </li>
+      <li class="nav-item hidden-cn">
+        <a class="nav-label" href="#"><i class="fa fa-circle text-danger"></i> Label danger</a>
+      </li>
+      <li class="nav-item hidden-cn">
+        <a class="nav-label" href="#"><i class="fa fa-circle text-info"></i> Label info</a>
+      </li>
+      <li class="nav-item hidden-cn">
+        <a class="nav-label" href="#"><i class="fa fa-circle text-warning"></i> Label warning</a>
+      </li>
+
+    </ul>
+  </nav>
+</div>
+
+
+<!--<button class="btn btn-default" id="toggle-sidebar" type="button" (click)="eventCalled()">-->
+  <!--&#9776;-->
+<!--</button>-->
+<!--<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">-->
+  <!--<ul class="list-group">-->
+    <!--<a [routerLink]="['/dashboard/home']" [routerLinkActive]="['router-link-active']" class="list-group-item">-->
+      <!--<i class="fa fa-fw fa-dashboard"></i> Dashboard-->
+    <!--</a>-->
+    <!--<a [routerLink]="['/dashboard/DailyBusinessReport']" [routerLinkActive]="['router-link-active']" class="list-group-item">-->
+      <!--<i class="fa fa-fw fa-bar-chart-o"></i> Daily Business-->
+    <!--</a>-->
+    <!--<a [routerLink]="['/dashboard/SalesStatistics']" [routerLinkActive]="['router-link-active']" class="list-group-item">-->
+      <!--<i class="fa fa-fw fa-table"></i> Sales Statistics-->
+    <!--</a>-->
+    <!--<a [routerLink]="['/dashboard/OrderDetails']" [routerLinkActive]="['router-link-active']" class="list-group-item">-->
+      <!--<i class="fa fa-fw fa-edit"></i> Order Details-->
+    <!--</a>-->
+    <!--<a [routerLink]="['/dashboard/HourlySales']" [routerLinkActive]="['router-link-active']" class="list-group-item">-->
+      <!--<i class="fa fa-fw fa-clock-o"></i> Hourly Sales-->
+    <!--</a>-->
+    <!--<a [routerLink]="['/dashboard/SynchronizingData']" [routerLinkActive]="['router-link-active']" class="list-group-item">-->
+      <!--<i class="fa fa-fw fa-wrench"></i> Synchronizing Data-->
+    <!--</a>-->
+    <!--<a [routerLink]="['/dashboard/BackupData']" [routerLinkActive]="['router-link-active']" class="list-group-item">-->
+      <!--<i class="fa fa-th-list"></i> &nbsp;Backup Data-->
+    <!--</a>-->
+    <!--<div class="nested-menu">-->
+      <!--<a class="list-group-item" (click)="addExpandClass('pages')">-->
+        <!--<span><i class="fa fa-plus"></i> &nbsp; Menu</span>-->
+      <!--</a>-->
+      <!--<li class="nested" [ngClass]="{'expand' : showMenu === 'pages' }">-->
+        <!--<ul class="submenu">-->
+          <!--<li>-->
+            <!--<a href><span>Submenu</span></a>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<a href><span>Submenu</span></a>-->
+          <!--</li>-->
+        <!--</ul>-->
+      <!--</li>-->
+    <!--</div>-->
+    <!--<a [routerLink]="['/dashboard/BlankPage']" [routerLinkActive]="['router-link-active']" class="list-group-item">-->
+      <!--<i class="fa fa-file-o"></i> &nbsp;Blank Page-->
+    <!--</a>-->
+  <!--</ul>-->
+<!--</nav>-->

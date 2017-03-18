@@ -1,5 +1,21 @@
 <app-topnav></app-topnav>
-<app-sidebar></app-sidebar>
-<section class="main-container" [ngClass]="{sidebarPushRight: isActive}">
-  <router-outlet></router-outlet>
-</section>
+
+<div class="app-body">
+
+  <app-sidebar></app-sidebar>
+  <!-- Main content -->
+  <main class="main">
+
+
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+    <!-- /.conainer-fluid -->
+  </main>
+</div>
+
+<footer class="app-footer">
+  <a href="https://genesisui.com">SimpliQ</a> &copy; 2017 creativeLabs.
+  <span class="float-right">Powered by <a href="https://genesisui.com">GenesisUI</a>
+    </span>
+</footer>
