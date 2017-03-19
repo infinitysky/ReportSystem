@@ -1,3 +1,66 @@
-<p>
-  hourly-sales-statistics works!
-</p>
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-sm-6 col-lg-3">
+      <div class="card">
+        <div class="card-block p-1 clearfix">
+          <i class="fa fa-cogs bg-primary p-1 font-2xl mr-1 float-left"></i>
+          <div class="text-uppercase text-muted font-weight-bold font-xs mb-0 mt-h">Clients</div>
+          <div class="h5">4.589</div>
+        </div>
+      </div>
+    </div><!--/.col-->
+
+    <div class="col-sm-6 col-lg-3">
+      <div class="card">
+        <div class="card-block p-1 clearfix">
+          <i class="fa fa-laptop bg-info p-1 font-2xl mr-1 float-left"></i>
+          <div class="text-uppercase text-muted font-weight-bold font-xs mb-0 mt-h">Deals</div>
+          <div class="h5">789</div>
+        </div>
+      </div>
+    </div><!--/.col-->
+
+    <div class="col-sm-6 col-lg-3">
+      <div class="card">
+        <div class="card-block p-1 clearfix">
+          <i class="fa fa-moon-o bg-warning p-1 font-2xl mr-1 float-left"></i>
+          <div class="text-uppercase text-muted font-weight-bold font-xs mb-0 mt-h">Income</div>
+          <div class="h5">$1.999</div>
+        </div>
+      </div>
+    </div><!--/.col-->
+
+    <div class="col-sm-6 col-lg-3">
+      <div class="card">
+        <div class="card-block p-1 clearfix">
+          <i class="fa fa-bell bg-danger p-1 font-2xl mr-1 float-left"></i>
+          <div class="text-uppercase text-muted font-weight-bold font-xs mb-0 mt-h">Account</div>
+          <div class="h5">$100K</div>
+        </div>
+      </div>
+    </div><!--/.col-->
+  </div><!--/.row-->
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="my-2">
+        <div class="chart-wrapper" style="height:350px">
+          <canvas baseChart class="chart"
+                  [datasets]="mainChartData"
+                  [labels]="mainChartLabels"
+                  [options]="mainChartOptions"
+                  [colors]="mainChartColours"
+                  [legend]="mainChartLegend"
+                  [chartType]="mainChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+        </div>
+      </div>
+    </div><!--/.col-->
+  </div><!--/.row-->
+
+
+
+
+
+</div>

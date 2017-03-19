@@ -13,11 +13,6 @@ import {DashboardComponent} from './dashboard.component';
 const routes: Routes = [
   {path:'',component:DashboardComponent,
     children:[
-
-
-
-
-
       { path: 'DailyBusinessReport',loadChildren:'./daily-business-report/daily-business-report.module#DailyBusinessReportModule'},
       { path: 'SalesStatistics',loadChildren:'./sales-statistics/sales-statistics.module#SalesStatisticsModule'},
       { path: 'OrderDetails',loadChildren:'./order-details/order-details.module#OrderDetailsModule'},
@@ -27,8 +22,6 @@ const routes: Routes = [
       { path: 'BlankPage',loadChildren:'./blankpage/blankpage.module#BlankpageModule'},
     ]
   },
-  // { path: 'home',loadChildren:'./home/home.module#HomeModule'},
-
 
 ];
 
